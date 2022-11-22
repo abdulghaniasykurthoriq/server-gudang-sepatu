@@ -1,0 +1,20 @@
+GET http://localhost:3001/api
+
+
+###
+GET http://localhost:3001/api/637707c9877b77b64dc5195b
+Content-Type: application/json
+
+
+###
+POST http://localhost:3001/api
+Content-Type: application/json
+
+{
+    "nama":"jordan",
+    "warna":"merah",
+    "ukuran":43,
+    "bahan":"kanvas",
+    "jenis":"sport",
+    "stock":42
+}
