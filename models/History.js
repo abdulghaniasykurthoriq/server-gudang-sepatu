@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const History = mongoose.Schema({
-    nama:{
-        type: String,
-        required : true
-    },
     sepatu_id:{
         type: String,
         // required : false
