@@ -2,11 +2,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import route from './routes/index.js';
 import userRoute from './routes/user.js';
+import historyRoute from './routes/history.js';
 import cors from "cors";
 import multer from 'multer';
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 const app = express();
 
@@ -60,7 +61,9 @@ app.use((req,res, next) => {
 app.use(cors());
 app.use(express.json());
 app.use('/api',route);
+app.use('/api', historyRoute);
 app.use('/api',userRoute);
+
 
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)

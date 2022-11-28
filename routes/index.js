@@ -4,15 +4,15 @@ import { verifyToken } from '../controllers/userController.js';
 
 const router = express.Router();
 
-router.get('/', getSepatu)
+router.get('/sepatu', getSepatu)
 
-router.get('/:id', verifyToken ,getSepatuById)
+router.get('/sepatu/:id' ,getSepatuById)
 
-router.patch('/:id', updateSepatuById)
+router.patch('/sepatu/:id', updateSepatuById)
 
-router.post('/', saveSepatu)
+router.post('/sepatu', saveSepatu)
 
-router.delete('/:id', deleteSepatuById)
+router.delete('/sepatu:id', deleteSepatuById)
 
 
 export default router;

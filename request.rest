@@ -18,3 +18,27 @@ Content-Type: application/json
     "jenis":"sport",
     "stock":42
 }
+
+
+###
+GET http://localhost:3001/api/history
+Content-Type: application/json
+
+
+###
+POST  http://localhost:3001/api/history
+Content-Type: application/json
+
+{
+    "nama":"jordan",
+    "sepatu_id":"merah",
+    "status":"ad",
+    "dari":"kanvas",
+    "untuk":"sport",
+    "tanggal":"sport",
+    "total_Sepatu":420
+}
+
+
+###
+DELETE   http://localhost:3000/api/history

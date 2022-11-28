@@ -1,38 +1,39 @@
 import mongoose from "mongoose";
 
-const Sepatu = mongoose.Schema({
-    _id:{
-        type: String,
-        required : true
-    },
+const History = mongoose.Schema({
     nama:{
         type: String,
         required : true
     },
-    warna:{
+    sepatu_id:{
         type: String,
         // required : false
     },
-    ukuran:{
-        type: Number,
-        // required : false
-    },
-    bahan:{
+    status:{
         type: String,
         // required : false
     },
-    jenis:{
+    dari:{
         type: String,
         // required : false
     },
-    stock:{
-        type: Number,
-        required : false
+    untuk:{
+        type: String,
+        // required : false
     },
-    image:{
-        type:String
+    tanggal:{
+        type: String
+    },
+    total_sepatu:{
+        type:Number
     }
 });
 
 
-export default mongoose.model('Sepatus', Sepatu);
+export default mongoose.model('Histories', History);
+
+
+
+
+
+

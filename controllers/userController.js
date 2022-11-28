@@ -6,7 +6,6 @@ import bcrypt from 'bcrypt';
 export const verifyToken = (req,res,next) => {
   const bearerHeader = req.headers['authorization'];
   if(typeof bearerHeader !== undefined){
-    console.log('bearerHeader', bearerHeader)
     const token = bearerHeader;
     if(token){
       jwt.verify(token,'BEARER', (err,decode) => {
@@ -15,13 +14,8 @@ export const verifyToken = (req,res,next) => {
       })
       
     }else{
-      res.send('gagal')
+      res.send('gagal login')
     }
-    // console.log('payload', req)
-    // const bearer = bearerHeader.split(' ');
-    // const bearerToken = bearer[1];
-    // req.token = bearerToken;
-    // jwt.verify(bearerHeader)
     
   }else{
     res.sendStatus(403);
