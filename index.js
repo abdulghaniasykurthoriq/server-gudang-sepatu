@@ -26,29 +26,8 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('database connected'))
 
 
-const Storage = multer.diskStorage({
-    destination:'uploads',
-    filename : (req,file,cb)=>{
-        cb(null, Date.now()+"_"+file.originalname)
-    }
-});
-const fileFilter = (req,file,cb) => {
-    if(file.mimetype === 'image/jpg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpeg' ){
-        cb(null,true)
-    }else{
-        cb(null,false)
-    }
-}
 
 
-const upload = multer({
-    storage:Storage,
-    fileFilter:fileFilter
-}).single('image')
-
-
-app.use(upload)
-app.use('/uploads',express.static('uploads'))
 app.use((req,res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE");

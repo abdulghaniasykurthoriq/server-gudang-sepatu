@@ -41,4 +41,13 @@ Content-Type: application/json
 
 
 ###
-DELETE   http://localhost:3000/api/history
+DELETE   http://localhost:3001/api/history
+
+
+###
+GET  http://localhost:3001/api/sepatu/8bc9e8f6-5239-7523-da47-3922b0da1553
+Content-Type: application/json
+
+{
+    "stock":999
+}
